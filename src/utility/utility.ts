@@ -11,13 +11,13 @@ export function runSimulation(
   result: any,
 ): Promise<void> {
   return new Promise((resolve) => {
-    if (!cyRef.current) {
+    if (!cyRef) {
       resolve();
       return;
     }
 
     // Run test on the automaton
-    const cy = cyRef.current,
+    const cy = cyRef,
       accept = result.accept,
       routes = result.routes;
 
